@@ -1,0 +1,103 @@
+﻿@using ShopTimeTracking.Models
+@model OvertimeViewModel
+@{
+    ViewBag.Title = "Create/Edit Overtime";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Overtime Entry</title>
+    @Html.Partial("_Scripts", new int[] { 300, 1 })
+
+</head>
+
+<body onload="overtimePageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_AdminBar", "Create/Edit Overtime")
+    <div class="jobtime">
+        <label>Overtime: </label><div id="overtimeBoxDiv"><select id="overtimeBox" onchange="updateOvertime();"></select></div>
+
+        </div>
+        @Html.Partial("_EmployeeID")
+        <div class="employeeIDDiv">
+            <label for="workleaderBox">Workleader ID: </label>
+            <input id="workleaderBox" type="text" onblur="checkWorkLeaderID()" />
+            <div id="workleaderName"></div>
+        </div>
+    
+        <div id="overTimeRowsDiv">
+            <div id="overTimeRow_0" style="border: 1px solid black; display: table;">
+            <div class="jobtime" style="padding-top:30px">
+                <label>Start: </label>
+                <input type="text" id="startDate_0" />
+                <select id="startTimeHours_0" style="width:60px">
+                    <option value=0>12</option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                    <option value=10>10</option>
+                    <option value=11>11</option>
+                </select>
+                <select id="startTimeQuarterHours_0" style="width:60px">
+                    <option value=0>00</option>
+                    <option value=15>15</option>
+                    <option value=30>30</option>
+                    <option value=45>45</option>
+                </select>
+                <select id="startTimeAMPM_0" style="width:60px">
+                    <option value='AM'>AM</option>
+                    <option value='PM'>PM</option>
+                </select>
+            </div>
+            <div class="jobtime">
+                <label>End: </label>
+                <input type="text" id="endDate_0" />
+                <select id="endTimeHours_0" style="width:60px">
+                    <option value=0>12</option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                    <option value=10>10</option>
+                    <option value=11>11</option>
+                </select>
+                <select id="endTimeQuarterHours_0" style="width:60px">
+                    <option value=0>00</option>
+                    <option value=15>15</option>
+                    <option value=30>30</option>
+                    <option value=45>45</option>
+                </select>
+                <select id="endTimeAMPM_0" style="width:60px">
+                    <option value='AM'>AM</option>
+                    <option value='PM'>PM</option>
+                </select>
+            </div>
+        </div>
+            <br />
+            </div>
+
+        <div class="jobtime">
+            <input type="submit" id="overtimeRowButton" onclick="addOvertimeRow();" style="width:250px" value="Add New Overtime" />
+        </div>
+        <div class="jobtime">
+
+            <input type="submit" onclick="submitOvertime(false);" value="Save" />
+            <input type="submit" id="deleteSubmit" onclick="submitOvertime(true);" value="Delete" />
+        </div>
+        @Html.Partial("_Footer")
+
+</body>
+</html>

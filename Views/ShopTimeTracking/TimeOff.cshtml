@@ -1,0 +1,122 @@
+﻿@using ShopTimeTracking.Models
+@model OvertimeViewModel
+@{
+    ViewBag.Title = "Create/Edit Time Off";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Time Off Entry</title>
+    @Html.Partial("_Scripts", new int[] { 300, 1 })
+
+    <script>
+        $(function () {
+            $("#startDate").datepicker({
+                //minDate: new Date();
+            });
+            
+            $("#endDate").datepicker();
+
+            $("#EndDate").change(function () {
+                var startDate = document.getElementById("StartDate").value;
+                var endDate = document.getElementById("EndDate").value;
+                if ((Date.parse(endDate) <= Date.parse(startDate))) {
+                    alert("End date should be greater than Start date");
+                    document.getElementById("EndDate").value = "";
+                }
+            });
+
+        } );
+    </script>
+</head>
+
+<body onload="timeOffPageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_AdminBar", "Create/Edit Time Off")
+    <div class="jobtime">
+        <label>Time Off: </label><div id="overtimeBoxDiv"><select id="overtimeBox" onchange="updateTimeOff();"></select></div>
+
+        </div>
+        @Html.Partial("_EmployeeID")
+        <div class="employeeIDDiv">
+            <label for="workleaderBox">Workleader ID: </label>
+            <input id="workleaderBox" type="text" onblur="checkWorkLeaderID()" />
+            <div id="workleaderName"></div>
+        </div>
+
+        <div class="jobtime">
+            <label>Type: </label>
+            <select id="timeOffType">
+                <option value=1>PTO</option>
+                <option value=2>PTO Frozen</option>
+            </select>
+        </div>
+
+        <div class="jobtime">
+            <label>Start: </label>
+            <input type="text" id="startDate" />
+            <select id="startTimeHours">
+                <option value=0>12</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+                <option value=11>11</option>
+            </select>
+            <select id="startTimeQuarterHours">
+                <option value=0>0</option>
+                <option value=15>15</option>
+                <option value=30>30</option>
+                <option value=45>45</option>
+            </select>
+            <select id="startTimeAMPM">
+                <option value='AM'>AM</option>
+                <option value='PM'>PM</option>
+            </select>
+            <br />
+            </div>
+            <div class="jobtime">
+                <label>End: </label>
+                <input type="text" id="endDate" />
+                <select id="endTimeHours">
+                    <option value=0>12</option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                    <option value=10>10</option>
+                    <option value=11>11</option>
+                </select>
+                <select id="endTimeQuarterHours">
+                    <option value=0>0</option>
+                    <option value=15>15</option>
+                    <option value=30>30</option>
+                    <option value=45>45</option>
+                </select>
+                <select id="endTimeAMPM">
+                    <option value='AM'>AM</option>
+                    <option value='PM'>PM</option>
+                </select>
+            </div>
+        <br />
+        <div class="jobtime">
+            <input type="submit" onclick="submitTimeOff(false);" value="Save" />
+            <input type="submit" onclick="submitTimeOff(true);" value="Delete" />
+        </div>
+        @Html.Partial("_Footer")
+
+</body>
+</html>

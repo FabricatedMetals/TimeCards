@@ -1,0 +1,29 @@
+﻿@using ShopTimeTracking.Models
+@model PayrollModel
+@{
+    ViewBag.Title = "Balances";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard</title>
+    @Html.Partial("_Scripts", new int[] { 15, 0 })
+</head>
+<body onload="balancesPageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_NavBar", "Balances")
+
+    <div class="employeeIDDiv">
+        <label for="employeeBox">ID: </label>
+        <input id="employeeBox" type="text" onblur="balancesReport()" onsubmit="balancesReport()" />
+        <div id="employeeName"></div>
+    </div>
+
+    <div id="ssrsReport"></div>
+
+    @Html.Partial("_Footer")
+
+</body>
+</html>

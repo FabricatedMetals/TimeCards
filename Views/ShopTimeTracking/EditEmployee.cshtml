@@ -1,0 +1,56 @@
+﻿@using ShopTimeTracking.Models
+@model EditEmployeeModel
+@{
+    ViewBag.Title = "Edit Employee";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Employee</title>
+   @Html.Partial("_Scripts", new int[] { 300, 1 })
+</head>
+
+<body onload="editEmployeePageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_AdminBar", "Edit Employee")
+    <div class="employeeIDDiv">
+        <label for="employeeBox">Employee ID: </label>
+        <input id="employeeBox" type="text" onblur="getEmployeeInfo()"/>
+        <div id="employeeName"></div>
+    </div>
+
+        
+    <div class="jobtime">
+        <label for="shiftboxDiv">Shift: </label><div id="shiftBoxDiv"><select id="shiftBox"></select></div>
+    </div>
+
+
+    <div class="employeeIDDiv">
+        <label for="workleaderBox">Workleader ID: </label>
+        <input id="workleaderBox" type="text" onblur="checkWorkLeaderID()" />
+        <div id="workleaderName"></div>
+    </div>
+    <div class="jobtime">
+        <label for="emailBox">E-mail: </label><input id="emailBox" type="text" />
+    </div>
+    <div class="jobtime">
+        <label for="workLeaderCB">
+            Work Leader Flag:
+        </label><input type="checkbox" id="workLeaderCB">
+    </div>
+    <div class="jobtime">
+        <label for="sysAdminCB">System Admin Flag: </label><input type="checkbox" id="sysAdminCB">
+    </div>
+
+    <div id="employeeShiftsDiv" class="jobtime" style="display:none">
+
+    </div>
+
+    <div>
+        <input type="submit" onclick="submitEditEmployee();" />
+    </div>
+    @Html.Partial("_Footer")
+</body>
+</html>

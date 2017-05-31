@@ -1,0 +1,82 @@
+﻿@using ShopTimeTracking.Models
+@model JobTimeModel
+@{
+    ViewBag.Title = "Job Time Entry";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Job Time Entry</title>
+    @Html.Partial("_Scripts", new int[] { 15, 0 })
+</head>
+<body onload="jobTimePageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_NavBar", "Job Time Entry")
+        @Html.Partial("_EmployeeID", "Job Time Entry")
+    <div class="locationDiv">
+    <ul class="location">
+        @{
+            foreach (var loc in Model.locations)
+            {
+                    <li>
+                    @Html.RadioButtonFor(Model => Model.locations, loc, new { id = "loc" + loc })
+                    @Html.Label("loc" + loc, loc)
+                    </li>
+            }
+        }
+    </ul>
+    </div>
+    <div id="jobTimesDiv" style="display:block">
+        <div id="jobTimesListDiv">
+            <div id="jobTimesListDivSubderp_0" style="border: 1px solid black; padding-top:30px">
+                <div class="jobtime">
+                    <label for="departmentBox_0">Department: </label><div id="departmentBox_0"><select id="departmentSelect_0"></select></div>
+                </div>
+                <div class="clear"></div>
+                <div class="jobtime">
+                    <label for="jobNumberBox_0">Job Number: </label><input type="text" id="jobNumberBox_0" onblur="CheckJobNumber('_0');" />
+                </div>
+                <div class="clear"></div>
+                <div class="jobtime">
+                    <label for="timeHours_0">Job Time: </label>
+                    <div class="multiSelects">
+                        <select id="timeHours_0">
+                            <option value=0>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                            <option value=6>6</option>
+                            <option value=7>7</option>
+                            <option value=8>8</option>
+                            <option value=9>9</option>
+                            <option value=10>10</option>
+                            <option value=11>11</option>
+                            <option value=12>12</option>
+                        </select>
+                        <select id="timeQuarterHours_0">
+                            <option value=0>0</option>
+                            <option value=.25>.25</option>
+                            <option value=.5>.5</option>
+                            <option value=.75>.75</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="jobtime">
+                    <label for="overtimeCheck_0">Overtime? </label><input id="overtimeCheck_0" type="checkbox" />
+                </div>
+            </div>
+            <br />
+        <div class="clear"></div>
+            </div>
+        <input type="submit" onclick="AddJobTimeRow();" value="Add another jobtime" style="font-size: 22px; float: left; height:70px" />
+        <br />
+        <input type="submit" onclick="submitJobTime();" />
+    </div>
+            @Html.Partial("_Footer")
+        
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    @Html.Partial("_Scripts", new int[] { 0, 0 })
+</head>
+<body>
+    @Html.Partial("_NavBar", "Home")
+    <br />
+    <br />
+    <div class="homeButtons">
+        <a class="homeButton" href="https://fabdyn.fabricated.local:444/ShopTimeTracking/ShopTimeTracking/Payroll">Payroll Entry</a>
+        <a class="homeButton" href="http://fabdyn.fabricated.local:81/ShopTimeTracking/ShopTimeTracking/JobTime">Job Time Entry</a>
+        <a class="homeButton" href="http://fabdyn.fabricated.local:81/ShopTimeTracking/ShopTimeTracking/Balances">Balances</a>
+    </div>
+    <br />
+    <br />
+    @Html.Partial("_Footer")
+</body>
+</html>

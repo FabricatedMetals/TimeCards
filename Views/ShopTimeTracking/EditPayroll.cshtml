@@ -1,0 +1,54 @@
+﻿@using ShopTimeTracking.Models
+@model PayrollAdminModel
+@{
+    ViewBag.Title = "Create/Edit Punches";}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payroll Edit Entry</title>
+    @Html.Partial("_Scripts", new int[] { 300, 1 })
+    <script>
+        $(function () {
+
+            $("#selectDate").datepicker();
+        });
+    </script>
+</head>
+
+<body onload="editPayrollPageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_AdminBar", "Create/Edit Punches")
+
+    @Html.Partial("_EmployeeID")
+    <div class="jobtime">
+        <br />
+        <label for="selectDate">Date: </label><input type="text" id="selectDate" />
+        <br />
+        
+    </div>
+    <div class="jobtime">
+        <input type="submit" value="Find Punches" onclick="getPayrollInformation();" />
+        <br />
+    </div>
+        <div class="shiftSelect">
+            <div id="punchesDiv"></div>
+            <br />
+        </div>
+    
+
+    <div class="jobtime">
+
+
+        <input type="submit" value="Add Punch" onclick="addPunch();" />
+    </div>
+    <br />
+    <div class="jobtime">
+        <input type="submit" value="Save" onclick="submitEditPayroll();" />
+    </div>
+
+        @Html.Partial("_Footer")
+
+</body>
+</html>

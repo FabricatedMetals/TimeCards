@@ -1,0 +1,50 @@
+﻿@using ShopTimeTracking.Models
+@model PayrollModel
+@{
+    ViewBag.Title = "Payroll Entry";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payroll Entry</title>
+    <script src="~/Scripts/ShopTimeTracking/ShopTimeTracking.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body onload="payrollPageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_NavBar")
+    <div>
+
+        Employee ID: <input id="employeeBox" type="text" onblur="checkID()" onsubmit="checkID()"/>
+        Employee Name: <div id="employeeName"></div>
+
+        Location:
+        @{
+            foreach (var loc in Model.locations)
+            {
+                <div>
+                    @Html.RadioButtonFor(Model => Model.locations, loc)
+                    @Html.Label("loc" + loc, loc)
+                </div>
+            }
+        }
+
+        Punch Type:
+        @{
+            foreach (var punch in Model.punchTypes)
+            {
+                <div>
+                    @Html.RadioButtonFor(Model => Model.punchTypes, punch)
+                    @Html.Label("punch" + punch, punch)
+                </div>
+            }
+        }
+
+        <input type="submit" onclick="submitPayroll();" />
+        
+    </div>
+</body>
+</html>

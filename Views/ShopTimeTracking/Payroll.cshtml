@@ -1,0 +1,63 @@
+﻿@using ShopTimeTracking.Models
+@model PayrollModel
+@{
+    ViewBag.Title = "Payroll Entry";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payroll Entry</title>
+    @Html.Partial("_Scripts", new int[] { 15, 0 })
+</head>
+
+<body onload="payrollPageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_NavBar", "Payroll Entry")
+
+    @Html.Partial("_EmployeeID", "Job Time Entry")
+
+    <div class="locationDiv">
+        <h3>Location</h3>
+        <ul class="location">
+            @{
+                foreach (var loc in Model.locations)
+                {
+                    <li>
+                        @Html.RadioButtonFor(Model => Model.locations, loc, new { id = "loc" + loc })
+                        @Html.Label("loc" + loc, loc)
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="locationDiv">
+        <h3>Punch Type</h3>
+        <ul class="location">
+            @{
+                for (int i = 0; i < Model.punchTypes.GetLength(0); i++)
+                {
+                    <li>
+                        <div class="punchLabel">
+                            @Html.RadioButtonFor(Model => Model.punchTypes, Model.punchTypes[i, 0], new { id = "punch" + Model.punchTypes[i, 0] })
+                            @Html.Label("punch" + Model.punchTypes[i, 0], Model.punchTypes[i, 1], new { id = "punchLabel" })
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+
+    <input type="submit" onclick="submitPayroll();" />
+    
+    <div id="container">
+        <video autoplay="true" id="videoElement"></video>
+
+        <canvas></canvas>
+
+    </div>
+    @Html.Partial("_Footer")
+
+</body>
+</html>

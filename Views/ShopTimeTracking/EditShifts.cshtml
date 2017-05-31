@@ -1,0 +1,49 @@
+﻿@using ShopTimeTracking.Models
+@model EditShiftsViewModel
+@{
+    ViewBag.Title = "Create/Edit Shifts";}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Shift Entry</title>
+    @Html.Partial("_Scripts", new int[] { 300, 1 })
+</head>
+
+<body onload="editShiftsPageLoad('@Json.Encode(@Model)');">
+    @Html.Partial("_AdminBar", "Create/Edit Shifts")
+    
+    <div class="jobtime">
+        <label for="shiftBox">Shift: </label><div id="shiftBoxDiv"><select id="shiftBox" onchange="getShiftInformation();"></select></div>
+    </div>
+        <br />
+        <div class="jobtime">
+            <label for="shiftNameBox">Shift Name: </label><input type="text" id="shiftNameBox" />
+        </div>
+        <br />
+    <div class="shiftSelect">
+        <div id="shiftPeriodsDiv"></div>
+        </div>
+    <div class="jobtime">
+
+        <input type="submit" value="Add Shift Period" onclick="addShiftPeriod();" />
+    </div>
+    <div class="jobtime">
+        <label for="employeeIDBox">Employees to add</label><label for="employeeIDBox" style="font-size:20px; padding-top:10px">(separated by commas):</label><input type="text" id="employeeIDBox" />
+    </div>
+    <br />
+
+    <div id="employeeShiftsDiv" class="jobtime" style="display:none">
+
+    </div>
+
+        <div class="jobtime">
+            <input type="submit" value ="Save" onclick="submitEditShifts(false);" /><input type="submit" value="Delete" onclick="submitEditShifts(true);" />
+        </div>
+
+        @Html.Partial("_Footer")
+
+</body>
+</html>

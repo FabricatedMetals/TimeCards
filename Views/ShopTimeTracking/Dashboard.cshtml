@@ -1,0 +1,28 @@
+﻿@model List<List<string>>
+
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard</title>
+    @Html.Partial("_Scripts", new int[] { 15, 0 })
+</head>
+<body onload="dashboardReport('@Json.Encode(@Model)')">
+    @Html.Partial("_AdminBar", "Dashboard")
+    
+    <div class="jobtime">
+        <label>Choose a Report: </label><div id="reportBoxDiv"><select id="reportBox" onchange="updateReport();"></select></div>
+
+    </div>
+    <div id="ssrsReport"></div>
+
+    @Html.Partial("_Footer")
+
+</body>
+</html>

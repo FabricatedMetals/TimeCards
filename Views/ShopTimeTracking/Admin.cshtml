@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Admin Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Page</title>
+    @Html.Partial("_Scripts", new int[] { 300, 1 })
+</head>
+<body onload="adminPass();">
+    @Html.Partial("_AdminBar", "Administrative Page")
+    <div class="homeButtons">
+        <a href="http://fabdyn.fabricated.local:81/ShopTimeTracking/ShopTimeTracking/EditEmployee">Edit Employee</a>
+        <a href="http://fabdyn.fabricated.local:81/ShopTimeTracking/ShopTimeTracking/EditShifts">Create/Edit Shifts</a>
+        <a href="http://fabdyn.fabricated.local:81/ShopTimeTracking/ShopTimeTracking/Overtime">Create/Edit Overtime</a>
+        <a href="http://fabdyn.fabricated.local:81/ShopTimeTracking/ShopTimeTracking/TimeOff">Create/Edit Time Off</a>
+        <a href="http://fabdyn.fabricated.local:81/ShopTimeTracking/ShopTimeTracking/Dashboard">Dashboard</a>
+    </div>
+    <div id="adminModal" title="Admin Login">
+        <p>Please log in</p>
+        Employee ID: <input type="text" id="employeeID" />
+        PIN:    <input type="text" id="employeePIN"/>
+    </div>
+    @Html.Partial("_Footer")
+</body>
+</html>
