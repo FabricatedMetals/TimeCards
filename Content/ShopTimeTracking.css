@@ -1,267 +1,350 @@
-﻿body {
-    padding: 20px;
-    background-color: #c6daf8;
-    width: 100%;
-    text-align: center;
-    
-    font-family:'Calibri';
-}
 
-input[type=submit] {
-    height: 100px;
-    width: 225px;
-    font-size: 60px;
-    padding:5px 15px; 
-    background:#ccc; 
-    border:1px solid black;
-    cursor:pointer;
-    
-    border-radius: 5px; 
-}
-
-div.navbar {
-    background-color: #ffffff;
-    margin: auto;
-    width: 80%;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-    div.navbar a {
-        white-space: nowrap;
-        font-size: 18px;
-        padding: 0px 3%;
-        font-weight: 700;
-    }
-
-footer {
-    background-color: #4c68a2;
-    margin: auto;
-    width: 80%;
-    height: 60px;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-div.submitTitle {
-    background-color: #ffffff;
-    margin: auto;
-    width: 80%;
-    padding: 10px;
-    border: 1px solid black;
-}
-div.submitTitle p {
-    font-size: 40px;
-}
-
-div.submitContent {
-    background-color: #9eb6e4;
-    margin: auto;
-    width: 98%;
-    padding: 10px;
-    border: 1px solid black;
-}    
-
-div.employeeIDDiv {
-    height: 100px;
-}
-div.employeeIDDiv label {
-    float:left;
-    font-size:35px;
-}
-
-#employeeBox, #workleaderBox {
-    height: 50px;
-    width: 150px;
-    font-size:20px;
-    float:left;
-}
-
-#employeeName, #workleaderName {
-    float: right;
-    font: 700 4vw calibri;
-}
-
-div.jobtime select, div.jobtime input  {
-    height: 50px;
-    width: 30%;
-    font-size: 20px;
-    float:left;
-}
-
-div.multiSelects select {
-    height: 50px;
-    width: 10%;
-    font-size: 20px;
-    float:left;
-}
-
-div.shiftSelect {
-    
-}
-
-div.shiftSelect select{
-    height: 50px;
-    width: 100px;
-    font-size: 20px;
-    float:left;
-}
-
-div.shiftsSlect #shiftSelectTimes {
-        height: 50px;
-    width: 50px;
-    font-size: 20px;
-    float:left;
-}
-
-div.shiftSelect label {
-    float:left;
-    font-size:25px;
-}
-
-dateRangedateRange
-
-div.dateRange {
-    height: 100px;
-    float:left;
-}
-
-div.shiftSelect input {
-    height: 50px;
-    width: 100px;
-    font-size: 10px;
-    float:left;
-}
-
-#timeHours, #timeQuarterHours {
-    width: 60px;
-}
-
-div.jobtime {
-    height:100px;
-}
-
-div.jobtime label {
-    float:left;
-    font-size:35px;
-}
-
-/*Location Radio Buttons*/
-div.locationDiv {
-    text-align:center;
-    border-top: 1px solid black;
-}
-
-div.shiftPeriods {
-    height: 100px;
-}
-
-
-.location {
-     list-style-type:none;
-     padding:0;
-     display: inline-block;
-     margin: 0;
-}
-
-
-.location li {
-    width:22vw;
-    float: left;
-    padding: 2px 5px;
-}
-
-
-.location label, .location input {
-    display:block;
-    
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-}
-
-.location input[type="radio"] {
-    opacity:0.011;
-    z-index:100;
-}
-
-.location input[type="radio"]:checked + label {
-    background:yellow;
-}
-
-.location label {
-     padding:5px;
-     border:1px solid black; 
-     height:12vw;
-     cursor:pointer;
-     font-size: 8vw;
-     z-index:90;
-}
-
-div.punchLabel label {
-     padding:5px;
-     border:1px solid black; 
-     height:8vw;
-     cursor:pointer;
-     font-size: 4vw;
-     z-index:90;
-}
-
-
-.location label:hover {
-     background:#DDD;
-}
-
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
+/* DOCUMENT INFORMATION
+	- Document: ShopTimeTracking.css
+	- Version:  1.0.1
 */
-.dl-horizontal dt {
-    white-space: normal;
-}
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-div.homeButtons {
-    font-size: 2vw;
-    font-family: Calibri;
-}
-
-div.homeButtons a {
-  background-color: #e6eefc;
-  padding: 10px 50px 10px 50px;
-  color: black;
-  border: 1px solid black;
-  white-space: nowrap;
-  line-height:380%;
-}
+/* CSS DIRECTORY
+	1. =GLOBAL
+	2. =PRIMARY
+	3. =SECONDARY
+	4. =TERTIARY
+	5. =TEXT-RELATED
+  6. =IMAGES AND LINKS
+  7. =GENERAL STYLES
+  8. =GENERAL CLASSES
+  9. =MISC SETTINGS
+  10. =MEDIA QUERIES
+*/
 
 
-#container {
-margin: 0px auto;
-width: 400px;
-height: 400px;
-            
-}
+/* ===============
+ =GLOBAL SETTINGS
+ global settings (resets, scrollbars, etc.)
+ =============== */
 
-#videoElement {
-width: 400px;
-height: 400px;
-            
-}
+ /* Override the default bootstrap behavior where horizontal description lists
+    will truncate terms that are too long to fit in the left column
+ */
+ .dl-horizontal dt {
+     white-space: normal;
+ }
 
-div.overTimeRows {
+/* ===============
+  =PRIMARY SETTINGS
+  primary layout structure (body, primary divs)
+  =============== */
 
-}
+  body {
+      padding: 20px;
+      background-color: #c6daf8;
+      width: 100%;
+      text-align: center;
+
+      font-family:'Calibri';
+  }
+
+  /* Set padding to keep content from hitting the edges */
+  .body-content {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  #container {
+  margin: 0px auto;
+  width: 400px;
+  height: 400px;
+
+  }
+
+
+/* ===============
+  =SECONDARY SETTINGS
+  secondary layout structure (header, footer, sidebar)
+  =============== */
+
+  div.navbar {
+      background-color: #ffffff;
+      margin: auto;
+      width: 80%;
+      padding: 10px;
+      border: 1px solid black;
+  }
+
+  div.navbar a {
+      white-space: nowrap;
+      font-size: 18px;
+      padding: 0px 3%;
+      font-weight: 700;
+  }
+
+  footer {
+      background-color: #4c68a2;
+      margin: auto;
+      width: 80%;
+      height: 60px;
+      padding: 10px;
+      border: 1px solid black;
+  }
+
+/* ===============
+   =TERTIARY SETTINGS
+   tertiary layout structure (page regions, floats)
+   =============== */
+
+
+/* ===============
+  =TEXT-RELATED SETTINGS
+  text-related treatments (headings, paragraphs, lists)
+  =============== */
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  #employeeBox, #workleaderBox {
+      height: 50px;
+      width: 150px;
+      font-size:20px;
+      float:left;
+  }
+
+  #employeeName, #workleaderName {
+      float: right;
+      font: 700 4vw calibri;
+  }
+
+/* ===============
+  =IMAGES AND LINKS SETTINGS
+  images, links, and other salient features (pre, code)
+  =============== */
+
+  #videoElement {
+  width: 400px;
+  height: 400px;
+
+  }
+
+/* ===============
+   =GENERAL STYLES SETTINGS
+   general styles (forms, tables, buttons, acronyms et al)
+   =============== */
+
+   input[type=submit] {
+       /*height: 100px;
+       width: 225px;*/
+       font-size: 2vw;
+       padding:5px 10px;
+       background-color: #e6eefc;
+       border:1px solid black;
+       cursor: pointer;
+       font-weight: bold;
+       border-radius: 6px;
+   }
+
+   input[type=submit]:hover {
+     background:#DDD;
+   }
+
+   div.submitTitle {
+       background-color: #ffffff;
+       margin: auto;
+       width: 80%;
+       padding: 10px;
+       border: 1px solid black;
+   }
+   div.submitTitle p {
+       font-size: 40px;
+   }
+
+   div.submitContent {
+       background-color: #9eb6e4;
+       margin: auto;
+       width: 98%;
+       padding: 10px;
+       border: 1px solid black;
+   }
+
+   div.employeeIDDiv {
+       height: 100px;
+   }
+
+   div.employeeIDDiv label {
+       float:left;
+       font-size:35px;
+       padding-right: 10px;
+   }
+
+   div.jobtime select, div.jobtime input  {
+       height: 50px;
+       width: 30%;
+       font-size: 20px;
+       float:left;
+   }
+
+   input:hover, select:hover {
+     cursor: pointer;
+   }
+
+   div.multiSelects select {
+       height: 50px;
+       width: 10%;
+       font-size: 20px;
+       float:left;
+   }
+
+   div.shiftSelect select{
+       height: 50px;
+       width: 100px;
+       font-size: 20px;
+       float:left;
+   }
+
+   div.shiftsSlect #shiftSelectTimes {
+       height: 50px;
+       width: 50px;
+       font-size: 20px;
+       float:left;
+   }
+
+   div.shiftSelect label {
+       float:left;
+       font-size:25px;
+   }
+
+   div.dateRange {
+       height: 100px;
+       float:left;
+   }
+
+   div.shiftSelect input {
+       height: 50px;
+       width: 100px;
+       font-size: 10px;
+       float:left;
+   }
+
+   #timeHours, #timeQuarterHours {
+       width: 60px;
+   }
+
+   div.jobtime {
+       height:100px;
+   }
+
+   div.jobtime label {
+       float:left;
+       font-size:25px;
+       padding-right: 10px;
+   }
+
+   /*Location Radio Buttons*/
+   div.locationDiv {
+       text-align:center;
+       border-top: 1px solid black;
+   }
+
+   div.shiftPeriods {
+       height: 100px;
+   }
+
+   .location {
+        list-style-type:none;
+        padding:0;
+        display: inline-block;
+        margin: 0;
+   }
+
+   .location li {
+       /*width:22vw;*/
+       float: left;
+       padding: 2px 5px;
+       margin: 10px;
+   }
+
+   .location label, .location input {
+       display:block;
+       background-color: #e6eefc;
+       top:0;
+       left:0;
+       right:0;
+       bottom:0;
+   }
+
+   .location input[type="radio"] {
+       opacity:0.011;
+       z-index:100;
+   }
+
+   .location input[type="radio"]:checked + label {
+       background:yellow;
+   }
+
+   .location label {
+        padding:5px 10px;
+        border:1px solid black;
+        /*height:12vw;*/
+        cursor:pointer;
+        font-size: 4vw;
+        border-radius: 6px;
+        z-index:90;
+   }
+
+   div.punchLabel label {
+        padding:5px 10px;
+        border:1px solid black;
+        /*height:8vw;*/
+        cursor:pointer;
+        font-size: 2vw;
+        z-index:90;
+   }
+
+   .location label:hover, div.homeButtons a:hover {
+        background:#DDD;
+   }
+
+   div.homeButtons {
+       font-size: 2vw;
+       font-family: Calibri;
+   }
+
+   div.homeButtons a {
+     background-color: #e6eefc;
+     padding: 10px;
+     color: black;
+     border: 1px solid black;
+     border-radius: 6px;
+     margin:10px;
+     white-space: nowrap;
+     line-height:380%;
+   }
+
+/* ===============
+  =GENERAL CLASSES SETTINGS
+  general classes (.clear, .center, .right, .left, etc.)
+  =============== */
+
+
+/* ===============
+  =MISC SETTINGS
+  miscellaneous stuff and template code
+  =============== */
+
+  /* Set width on the form input elements since they're 100% wide by default */
+  input,
+  select,
+  textarea {
+      max-width: 280px;
+  }
+
+  /*LEFTOVER???*/
+
+  dateRangedateRange
+
+  div.overTimeRows {
+
+  }
+
+/* ===============
+  =MEDIA QUERIES
+  =============== */
